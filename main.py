@@ -2,6 +2,9 @@ from fastapi import FastAPI
 from deepface import DeepFace
 app = FastAPI()
 
+@app.get("/")
+async def root():
+    return {"message": "Hello World"}
 
 @app.get("/verify/{img1,img2}")
 async def verify(img1, img2):
